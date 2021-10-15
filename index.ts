@@ -122,6 +122,5 @@ console.log(cao);
 $.fn.extend({
     novaFuncao(){
         console.log('Chamou nova funcao');
-        
     }
 })
