@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
+    "@types/jquery": "^3.5.7",
     "jquery": "^3.6.0",
     "parcel": "^2.0.0"
   },

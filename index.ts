@@ -97,9 +97,9 @@ interface Cachorro {
     nomeParqueFavorito?: string
 }
 
-type CachorroSomenteLeitura = {
-    +readonly [k in keyof Cachorro]-?: Cachorro[k]
-}
+// type CachorroSomenteLeitura = {
+//     +readonly [k in keyof Cachorro]-?: Cachorro[k]
+// }
 
 class MeuCachorro implements Cachorro {
     readonly idade
@@ -107,13 +107,14 @@ class MeuCachorro implements Cachorro {
     readonly nomeParqueFavorito
 
 
-    constructor (nome, idade) {
+    constructor (nome: string, idade: number, nomeParqueFavorito: string) {
         this.nome = nome
         this.idade = idade
+        this.nomeParqueFavorito = nomeParqueFavorito
     }
 }
 
-const cao = new MeuCachorro('Apolo', 14)
+const cao = new MeuCachorro('Apolo', 14, 'area verde')
 
 console.log(cao);
 
@@ -124,3 +125,23 @@ $.fn.extend({
         console.log('Chamou nova funcao');
     }
 })
+
+$('body').novaFuncao()
+
+// ----------------------------------------------------------
+interface IPessoa {
+    nome: string
+    idade: number
+    nacionalidade: string
+}
+
+interface IBrasileiro extends Omit <IPessoa, 'nacionalidade'>{
+
+}
+
+const p: IBrasileiro = {
+    nome: 'Moisas',
+    idade: 39
+}
+
+console.log(p);
