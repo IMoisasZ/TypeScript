@@ -1,3 +1,5 @@
+import $ from 'jquery'
+
 function sum(a: number, b: number){
     return a + b
 }
@@ -115,3 +117,11 @@ const cao = new MeuCachorro('Apolo', 14)
 
 console.log(cao);
 
+//-------------------------------------------------------------------------
+
+$.fn.extend({
+    novaFuncao(){
+        console.log('Chamou nova funcao');
+        
+    }
+})
